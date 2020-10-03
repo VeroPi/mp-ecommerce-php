@@ -130,7 +130,77 @@
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>
+                                    <!--<button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
+                                    <!-- -->
+                                    <?php
+                                        // SDK de Mercado Pago
+                                        require __DIR__ .  '/vendor/autoload.php';
+                                    
+                                        // Agrega credenciales
+                                        MercadoPago\SDK::setAccessToken('APP_USR-6317427424180639-042414-47e969706991d3a442922b0702a0da44-469485398');
+
+                                        // Crea un objeto de preferencia
+                                        $preference = new MercadoPago\Preference();
+                                        // Metodos de Pago
+                                        $preference->payment_methods = array(
+                                          "excluded_payment_methods" => array(
+                                            array("id" => "amex")
+                                          ),
+                                          "excluded_payment_types" => array(
+                                            array("id" => "atm")
+                                          ),
+                                          "installments" => 6
+                                        );
+                                        // ...
+
+                                        // Datos del Pagador
+                                        $payer = new MercadoPago\Payer();
+                                        $payer->name = "Lalo";
+                                        $payer->surname = "Landa";
+                                        $payer->email = "test_user_63274575@testuser.com";
+                                        $payer->phone = array(
+                                            "area_code" => "11",
+                                            "number" => "22223333"
+                                        );
+                                          
+                                        $payer->address = array(
+                                           "street_name" => "False",
+                                           "street_number" => 123,
+                                           "zip_code" => "1111"
+                                        );
+                                        // ...
+
+                                        //...
+                                        $preference->back_urls = array(
+                                            "success" => "https://veropi-mp-ecommerce-php.herokuapp.com/success.php",
+                                            "failure" => "https://veropi-mp-ecommerce-php.herokuapp.com/failure.php",
+                                            "pending" => "https://veropi-mp-ecommerce-php.herokuapp.com/pending.php"
+                                        );
+                                        $preference->auto_return = "approved";
+                                        // ...
+
+                                        // Crea un ítem en la preferencia
+                                        $item = new MercadoPago\Item();
+                                        $item->id = 1234;
+                                        $item->title = $_POST['title'];
+                                        $item->description = $_POST['title'];
+                                        $item->picture_url = $_POST['img'];
+                                        $item->quantity = 1;
+                                        $item->unit_price = $_POST['price'];
+                                        $preference->items = array($item);
+                                        $preference->external_reference = 'veropineyro@hotmail.com';
+                                        $preference->save();
+                                    ?>
+
+                                    <form action="/procesar-pago" method="POST">
+                                      <script
+                                       src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
+                                       data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra">
+                                      </script>
+                                    </form>
+
+
+                                    <!-- -->
                                 </div>
                             </div>
                         </div>
