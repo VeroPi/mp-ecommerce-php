@@ -11,6 +11,7 @@
     src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
     crossorigin="anonymous"></script>
+    <script src="https://www.mercadopago.com/v2/security.js" view="item"></script>
 
     <link rel="stylesheet" href="./assets/category-landing.css" media="screen, print">
 
@@ -130,7 +131,7 @@
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
                                     </div>
-                                    <!--<button type="submit" class="mercadopago-button" formmethod="post">Pagar</button>-->
+                                    
                                     <!-- -->
                                     <?php
                                         // SDK de Mercado Pago
@@ -188,16 +189,23 @@
                                         $item->quantity = 1;
                                         $item->unit_price = $_POST['price'];
                                         $preference->items = array($item);
-                                        $preference->external_reference = 'veropineyro@hotmail.com';
-                                        $preference->save();
-                                    ?>
 
-                                    <form action="/procesar-pago" method="POST">
+                                        $preference->external_reference = 'veropineyro@hotmail.com';
+                                        $preference->notification_url = "https://veropi-mp-ecommerce-php.herokuapp.com/notification.php";
+
+                                        $preference->save();
+
+                                        //Setear el integrator-id
+                                        MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
+                                    ?>
+                                    <button type="submit" href="<?php echo $preference->init_point; ?>" class="mercadopago-button" formmethod="post">Pagar la compra</button>
+                                    
+                                    <!--<form action="/procesar-pago" method="POST">
                                       <script
                                        src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
                                        data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra">
                                       </script>
-                                    </form>
+                                    </form>--> 
 
 
                                     <!-- -->
