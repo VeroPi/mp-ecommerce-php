@@ -198,14 +198,13 @@
                                         //Setear el integrator-id
                                         MercadoPago\SDK::setIntegratorId("dev_24c65fb163bf11ea96500242ac130004");
                                     ?>
-                                    <button type="submit" href="<?php echo $preference->init_point; ?>" class="mercadopago-button" formmethod="post">Pagar la compra</button>
-                                    
-                                    <!--<form action="/procesar-pago" method="POST">
+                                                                        
+                                    <form action="/procesar-pago" method="POST">
                                       <script
                                        src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js"
                                        data-preference-id="<?php echo $preference->id; ?>" data-button-label="Pagar la compra">
                                       </script>
-                                    </form>--> 
+                                    </form> 
 
 
                                     <!-- -->
