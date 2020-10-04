@@ -82,27 +82,63 @@
                                         </h2>
                                     </button>
 
-                                </div>
-                                <div>
-                                    <p>Su pago fue aceptado corectamente</p>
-                                    <p>Estos son los datos de tu pago</p>
-                                    <p>
-                                        <?php 
-                                        
-                                            echo 'ID del pago de Mercado Pago '.$_GET['collection_id'].'<br>';
-                                            echo 'Estado del pago '.$_GET['collection_status'].'<br>';
-                                            echo 'Tipo de pago '.$_GET['payment_type'].'<br>';
-                                            echo 'External Reference '.$_GET['external_reference'].'<br>';
-                                            echo 'ID de la orden de pago generada en Mercado Pago '.$_GET['merchant_order_id'].'<br>';
-                                            
-                                        ?>
-                                    </p>
 
                                 </div>
 
                             </div>
                         </div>
-                  
+                        <div class="as-accessories-results  as-search-desktop">
+                            <div class="width:60%">
+                                <div class="as-producttile-tilehero with-paddlenav " style="float:left;">
+                                    <div class="as-dummy-container as-dummy-img">
+
+                                        <img src="./assets/wireless-headphones" class="ir ir item-image as-producttile-image  " style="max-width: 70%;max-height: 70%;"alt="" width="445" height="445">
+                                    </div>
+                                    <div class="images mini-gallery gal5 ">
+                                    
+
+                                        <div class="as-isdesktop with-paddlenav with-paddlenav-onhover">
+                                            <div class="clearfix image-list xs-no-js as-util-relatedlink relatedlink" data-relatedlink="6|Powerbeats3 Wireless Earphones - Neighborhood Collection - Brick Red|MPXP2">
+                                                <div class="as-tilegallery-element as-image-selected">
+                                                    <div class=""></div>
+                                                </div>
+                                                
+                                            </div>
+
+                                            
+                                        </div>
+
+                                        
+
+                                    </div>
+
+                                </div>
+                                <div class="as-producttile-info" style="float:left;min-height: 168px;">
+                                    <div class="as-producttile-titlepricewraper" style="min-height: 128px;">
+                                        <div class="as-producttile-title">
+                                            <h3 class="as-producttile-name">
+                                                <p class="as-producttile-tilelink">
+                                                    <span data-ase-truncate="2">Su pago fue aceptado correctamente. Detalles:</span>
+                                                </p>
+
+                                            </h3>
+                                        </div>
+                                        <h3 >
+                                            <?php  
+                                                echo 'ID del pago de Mercado Pago '.$_GET['collection_id'].'<br>';
+                                                echo 'Estado del pago '.$_GET['collection_status'].'<br>';
+                                                echo 'Tipo de pago '.$_GET['payment_type'].'<br>';
+                                                echo 'External Reference '.$_GET['external_reference'].'<br>';
+                                                echo 'ID de la orden de pago generada en Mercado Pago '.$_GET['merchant_order_id'].'<br>';
+                                            ?>
+                                        </h3>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
