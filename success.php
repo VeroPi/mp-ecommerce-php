@@ -120,17 +120,20 @@
                                                 <p class="as-producttile-tilelink">
                                                     <span data-ase-truncate="2">Su pago fue aceptado correctamente. Detalles:</span>
                                                 </p>
+                                                <p>
+                                                    <?php  
+                                                        echo 'ID del pago de Mercado Pago '.$_GET['collection_id'].'<br>';
+                                                        echo 'Estado del pago '.$_GET['collection_status'].'<br>';
+                                                        echo 'Tipo de pago '.$_GET['payment_type'].'<br>';
+                                                        echo 'External Reference '.$_GET['external_reference'].'<br>';
+                                                        echo 'ID de la orden de pago generada en Mercado Pago '.$_GET['merchant_order_id'].'<br>';
+                                                    ?>        
+                                                </p>
 
                                             </h3>
                                         </div>
                                         <h3 >
-                                            <?php  
-                                                echo 'ID del pago de Mercado Pago '.$_GET['collection_id'].'<br>';
-                                                echo 'Estado del pago '.$_GET['collection_status'].'<br>';
-                                                echo 'Tipo de pago '.$_GET['payment_type'].'<br>';
-                                                echo 'External Reference '.$_GET['external_reference'].'<br>';
-                                                echo 'ID de la orden de pago generada en Mercado Pago '.$_GET['merchant_order_id'].'<br>';
-                                            ?>
+                                            
                                         </h3>
                                         
                                     </div>
