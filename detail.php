@@ -201,7 +201,6 @@
                                                                         
                                     <a href="<?php echo $preference->init_point; ?>">Pagar la compra</a>
 
-                                    <!-- -->
                                 </div>
                             </div>
                         </div>
