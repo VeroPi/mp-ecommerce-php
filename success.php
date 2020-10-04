@@ -79,6 +79,20 @@
                                         <h2 class=" as-filter-button-text">
                                             Success
                                         </h2>
+                                        <hr>
+                                        <p>Su pago fue aceptado corectamente</p>
+                                        <p>Estos son los datos de tu pago</p>
+                                        <p>
+                                            <?php 
+                                            
+                                                echo 'ID del pago de Mercado Pago '.$_GET['collection_id'].'<br>';
+                                                echo 'Estado del pago '.$_GET['collection_status'].'<br>';
+                                                echo 'Tipo de pago '.$_GET['payment_type'].'<br>';
+                                                echo 'External Reference '.$_GET['external_referernce'].'<br>';
+                                                echo 'ID de la orden de pago generada en Mercado Pago '.$_GET['merchant_order_id'].'<br>';
+                                                
+                                            ?>
+                                        </p>
                                     </button>
 
 

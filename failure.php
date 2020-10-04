@@ -79,6 +79,8 @@
                                         <h2 class=" as-filter-button-text">
                                             Failure
                                         </h2>
+                                        <hr>
+                                        <p>Hubo un problema al procesar su pago. Si lo desea puede intentarlo nuevamente con otro medio de pago</p>
                                     </button>
 
 

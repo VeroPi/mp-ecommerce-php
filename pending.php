@@ -79,6 +79,8 @@
                                         <h2 class=" as-filter-button-text">
                                             Pending
                                         </h2>
+                                        <hr>
+                                        <p>Su pago quedo pendiente</p>
                                     </button>
 
 
