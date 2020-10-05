@@ -130,9 +130,6 @@
                                         <h3 >
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
-                                         <h3 >
-                                            <?php echo $_POST['img'] ?>
-                                        </h3>
                                     </div>
                                     
                                     <!-- -->
