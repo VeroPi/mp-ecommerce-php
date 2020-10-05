@@ -130,6 +130,9 @@
                                         <h3 >
                                             <?php echo "$" . $_POST['unit'] ?>
                                         </h3>
+                                         <h3 >
+                                            <?php echo $_POST['img'] ?>
+                                        </h3>
                                     </div>
                                     
                                     <!-- -->
@@ -186,8 +189,8 @@
                                         $item = new MercadoPago\Item();
                                         $item->id = 1234;
                                         $item->title = $_POST['title'];
-                                        $item->description = $_POST['title'];
-                                        $item->picture_url = $_POST['img'];
+                                        $item->description = 'Dispositivo móvil de Tienda e-commerce';
+                                        $item->picture_url = 'https://veropi-mp-ecommerce-php.herokuapp.com/'.$_POST['img'];
                                         $item->quantity = 1;
                                         $item->unit_price = $_POST['price'];
                                         $preference->items = array($item);
